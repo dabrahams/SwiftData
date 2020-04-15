@@ -46,7 +46,8 @@ extension Batches : Collection {
 
   /// Returns the position immediately following `i`.
   public func index(after i: Index) -> Index {
-    return samples.index(i, offsetBy: batchSize, limitedBy: endIndex)!
+    return samples.index(i, offsetBy: batchSize, limitedBy: endIndex)
+      ?? endIndex
   }
 
   /// Returns the element at `i`.
